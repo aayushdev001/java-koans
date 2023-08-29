@@ -9,13 +9,13 @@ public class AboutPrimitives {
 
     @Koan
     public void wholeNumbersAreOfTypeInt() {
-        assertEquals(getType(1), __); // hint: int.class
+        assertEquals(getType(1), int.class); // hint: int.class
     }
 
     @Koan
     public void primitivesOfTypeIntHaveAnObjectTypeInteger() {
         Object number = 1;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), number.getClass());
 
         // Primitives can be automatically changed into their object type via a process called auto-boxing
         // We will explore this in more detail in intermediate.AboutAutoboxing
@@ -23,35 +23,35 @@ public class AboutPrimitives {
 
     @Koan
     public void integersHaveAFairlyLargeRange() {
-        assertEquals(Integer.MIN_VALUE, __);
-        assertEquals(Integer.MAX_VALUE, __);
+        assertEquals(Integer.MIN_VALUE, -2147483648);
+        assertEquals(Integer.MAX_VALUE, 2147483647);
     }
 
     @Koan
     public void integerSize() {
-        assertEquals(Integer.SIZE, __);  // This is the amount of bits used to store an int
+        assertEquals(Integer.SIZE, 32);  // This is the amount of bits used to store an int
     }
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeLong() {
-        assertEquals(getType(1L), __);
+        assertEquals(getType(1L), long.class);
     }
 
     @Koan
     public void primitivesOfTypeLongHaveAnObjectTypeLong() {
         Object number = 1L;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), number.getClass());
     }
 
     @Koan
     public void longsHaveALargerRangeThanInts() {
-        assertEquals(Long.MIN_VALUE, __);
-        assertEquals(Long.MAX_VALUE, __);
+        assertEquals(Long.MIN_VALUE, -9223372036854775807L);
+        assertEquals(Long.MAX_VALUE, 9223372036854775807L);
     }
 
     @Koan
     public void longSize() {
-        assertEquals(Long.SIZE, __);
+        assertEquals(Long.SIZE, 64);
     }
 
     @Koan
@@ -62,42 +62,42 @@ public class AboutPrimitives {
     @Koan
     public void primitivesOfTypeShortHaveAnObjectTypeShort() {
         Object number = (short) 1;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), number.getClass());
     }
 
     @Koan
     public void shortsHaveASmallerRangeThanInts() {
-        assertEquals(Short.MIN_VALUE, __);  // hint: You'll need an explicit cast
-        assertEquals(Short.MAX_VALUE, __);
+        assertEquals(Short.MIN_VALUE, 32767);  // hint: You'll need an explicit cast
+        assertEquals(Short.MAX_VALUE, -32768);
     }
 
     @Koan
     public void shortSize() {
-        assertEquals(Short.SIZE, __);
+        assertEquals(Short.SIZE, 16);
     }
 
     @Koan
     public void wholeNumbersCanAlsoBeOfTypeByte() {
-        assertEquals(getType((byte) 1), __);
+        assertEquals(getType((byte) 1), byte.class);
     }
 
     @Koan
     public void primitivesOfTypeByteHaveAnObjectTypeByte() {
         Object number = (byte) 1;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), number.getClass());
     }
 
     @Koan
     public void bytesHaveASmallerRangeThanShorts() {
-        assertEquals(Byte.MIN_VALUE, __);
-        assertEquals(Byte.MAX_VALUE, __);
+        assertEquals(Byte.MIN_VALUE, -128);
+        assertEquals(Byte.MAX_VALUE, 127);
 
         // Why would you use short or byte considering that you need to do explicit casts?
     }
 
     @Koan
     public void byteSize() {
-        assertEquals(Byte.SIZE, __);
+        assertEquals(Byte.SIZE, 8);
     }
 
     @Koan
@@ -131,65 +131,65 @@ public class AboutPrimitives {
 
     @Koan
     public void decimalNumbersAreOfTypeDouble() {
-        assertEquals(getType(1.0), __);
+        assertEquals(getType(1.0), char.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
-        assertEquals(getType(1d), __);
+        assertEquals(getType(1d), double.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3), __);
-        assertEquals(1.0e3, __);
-        assertEquals(1E3, __);
+        assertEquals(getType(1e3), double.class);
+        assertEquals(1.0e3, 1000.0);
+        assertEquals(1E3, 1000.0);
     }
 
     @Koan
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number),double.class);
     }
 
     @Koan
     public void doublesHaveALargeRange() {
-        assertEquals(Double.MIN_VALUE, __);
-        assertEquals(Double.MAX_VALUE, __);
+        assertEquals(Double.MIN_VALUE, 4.9E-324);
+        assertEquals(Double.MAX_VALUE, 1.7976931348623157E308);
     }
 
     @Koan
     public void doubleSize() {
-        assertEquals(Double.SIZE, __);
+        assertEquals(Double.SIZE, 64);
     }
 
     @Koan
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
-        assertEquals(getType(1f), __);
+        assertEquals(getType(1f), float.class);
     }
 
     @Koan
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3f), __);
-        assertEquals(1.0e3f, __);
-        assertEquals(1E3f, __);
+        assertEquals(getType(1e3f), float.class);
+        assertEquals(1.0e3f, 1000.0);
+        assertEquals(1E3f, 1000.0);
     }
 
     @Koan
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), number.getClass());
     }
 
     @Koan
     public void floatsHaveASmallerRangeThanDoubles() {
-        assertEquals(Float.MIN_VALUE, __);
-        assertEquals(Float.MAX_VALUE, __);
+        assertEquals(Float.MIN_VALUE, 1.4E-45);
+        assertEquals(Float.MAX_VALUE, 3.4028235E38);
     }
 
     @Koan
     public void floatSize() {
-        assertEquals(Float.SIZE, __);
+        assertEquals(Float.SIZE, 32);
     }
 
     private Class<?> getType(int value) {

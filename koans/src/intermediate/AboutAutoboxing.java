@@ -13,40 +13,40 @@ public class AboutAutoboxing {
     @Koan
     public void addPrimitivesToCollection() {
         List<Integer> list = new ArrayList<Integer>();
-        list.add(0, new Integer(42));
-        assertEquals(list.get(0), __);
+        list.add(0, Integer.valueOf(42));
+        assertEquals(list.get(0), 42);
     }
 
     @Koan
     public void addPrimitivesToCollectionWithAutoBoxing() {
         List<Integer> list = new ArrayList<Integer>();
         list.add(0, 42);
-        assertEquals(list.get(0), __);
+        assertEquals(list.get(0), 42);
     }
 
     @Koan
     public void migrateYourExistingCodeToAutoBoxingWithoutFear() {
         List<Integer> list = new ArrayList<Integer>();
-        list.add(0, new Integer(42));
-        assertEquals(list.get(0), __);
+        list.add(0, Integer.valueOf(42));
+        assertEquals(list.get(0), 42);
 
         list.add(1, 84);
-        assertEquals(list.get(1), __);
+        assertEquals(list.get(1), 84);
     }
 
     @Koan
     public void allPrimitivesCanBeAutoboxed() {
         List<Double> doubleList = new ArrayList<Double>();
-        doubleList.add(0, new Double(42));
-        assertEquals(doubleList.get(0), __);
+        doubleList.add(0, Double.valueOf(42));
+        assertEquals(doubleList.get(0), 42);
 
         List<Long> longList = new ArrayList<Long>();
-        longList.add(0, new Long(42));
-        assertEquals(longList.get(0), __);
+        longList.add(0, Long.valueOf(42));
+        assertEquals(longList.get(0), 42);
 
         List<Character> characterList = new ArrayList<Character>();
-        characterList.add(0, new Character('z'));
-        assertEquals(characterList.get(0), __);
+        characterList.add(0, 'z');
+        assertEquals(characterList.get(0), 'z');
     }
 
 }
