@@ -14,9 +14,9 @@ public class AboutComparison {
     public void compareObjects() {
         String a = "abc";
         String b = "bcd";
-        assertEquals(a.compareTo(b), __);
-        assertEquals(a.compareTo(a), __);
-        assertEquals(b.compareTo(a), __);
+        assertEquals(a.compareTo(b), false);
+        assertEquals(a.compareTo(a), true);
+        assertEquals(b.compareTo(a), false);
     }
 
     static class Car implements Comparable<Car> {
@@ -24,7 +24,8 @@ public class AboutComparison {
 
         // For an explanation for this implementation look at
         // http://download.oracle.com/javase/6/docs/api/java/lang/Comparable.html#compareTo(T)
-        public int compareTo(Car o) {
+        public int compareTo(Car o)
+        {
             return horsepower - o.horsepower;
         }
 
@@ -36,7 +37,7 @@ public class AboutComparison {
         vwbeetle.horsepower = 50;
         Car porsche = new Car();
         porsche.horsepower = 300;
-        assertEquals(vwbeetle.compareTo(porsche), __);
+        assertEquals(vwbeetle.compareTo(porsche), -250);
     }
 
     static class RaceHorse {
@@ -76,8 +77,8 @@ public class AboutComparison {
         RaceHorse[] horses = {lindy, slowy, lightning};
 
         Arrays.sort(horses, new HorseAgeComparator());
-        assertEquals(horses[0], __);
+        assertEquals(horses[0], "Speed: 10 Age: 2");
         Arrays.sort(horses, new HorseSpeedComparator());
-        assertEquals(horses[0], __);
+        assertEquals(horses[0], "Speed: 1 Age: 12");
     }
 }
