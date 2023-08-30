@@ -12,20 +12,20 @@ public class AboutEquality {
     public void sameObject() {
         Object a = new Object();
         Object b = a;
-        assertEquals(a == b, __);
+        assertEquals(a == b, false);
     }
 
     @Koan
     public void equalObject() {
-        Integer a = new Integer(1);
-        Integer b = new Integer(1);
-        assertEquals(a.equals(b), __);
-        assertEquals(b.equals(a), __);
+        Integer a = Integer.valueOf(1);
+        Integer b = Integer.valueOf(1);
+        assertEquals(a.equals(b), true);
+        assertEquals(b.equals(a), true);
     }
 
     @Koan
     public void noObjectShouldBeEqualToNull() {
-        assertEquals(new Object().equals(null), __);
+        assertEquals(new Object().equals(null), false);
     }
 
     static class Car {
@@ -38,11 +38,13 @@ public class AboutEquality {
         }
 
         @Override
-        public boolean equals(Object other) {
+        public boolean equals(Object other)
+        {
             // Change this implementation to match the equals contract
             // Car objects with same horsepower and name values should be considered equal
             // http://download.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)
-            return false;
+            Car c = (Car) other;
+            return this.horsepower == c.horsepower && this.name.equals(c.name);
         }
 
         @Override
@@ -119,8 +121,8 @@ public class AboutEquality {
         Chicken chicken1 = new Chicken();
         chicken1.color = "black";
         Chicken chicken2 = new Chicken();
-        assertEquals(chicken1.equals(chicken2), __);
-        assertEquals(chicken1.hashCode() == chicken2.hashCode(), __);
+        assertEquals(chicken1.equals(chicken2), false);
+        assertEquals(chicken1.hashCode() == chicken2.hashCode(), true);
         // Does this still fit the hashCode contract? Why (not)?
         // Fix the Chicken class to correct this.
     }

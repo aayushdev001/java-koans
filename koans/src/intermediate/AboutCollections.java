@@ -86,12 +86,12 @@ public class AboutCollections {
         map.put("e", "Emu");
         map.put("f", "Fox");
         SortedMap<String, String> backedMap = map.subMap("c", "f");
-        assertEquals(backedMap.size(), __);
-        assertEquals(map.size(), __);
+        assertEquals(backedMap.size(), 1);
+        assertEquals(map.size(), 5);
         backedMap.put("d", "Dog");
-        assertEquals(backedMap.size(), __);
-        assertEquals(map.size(), __);
-        assertEquals(map.containsKey("d"), __);
+        assertEquals(backedMap.size(), 2);
+        assertEquals(map.size(), 5);
+        assertEquals(map.containsKey("d"), false);
         // Again: backed maps are just like those little quantum states
         // that are connected forever...
     }
@@ -102,8 +102,8 @@ public class AboutCollections {
         sorted.add("c");
         sorted.add("z");
         sorted.add("a");
-        assertEquals(sorted.first(), __);
-        assertEquals(sorted.last(), __);
+        assertEquals(sorted.first(), "c");
+        assertEquals(sorted.last(), "a");
         // Look at the different constructors for a TreeSet (or TreeMap)
         // Ponder how you might influence the sort order. Hold that thought
         // until you approach AboutComparison
@@ -116,6 +116,6 @@ public class AboutCollections {
         for (String s : ordered) {
             sb.append(s);
         }
-        assertEquals(sb.toString(), __);
+        assertEquals(sb.toString(), "cza");
     }
 }
